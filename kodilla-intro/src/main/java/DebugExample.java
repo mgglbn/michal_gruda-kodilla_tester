@@ -3,6 +3,7 @@ public class DebugExample {
         int firstNumber = 11;
         int secondNumber = 22;
 
+
         System.out.println(firstNumber);
         System.out.println(secondNumber);
 
