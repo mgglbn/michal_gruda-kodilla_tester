@@ -34,7 +34,7 @@ public class Notebook {
     }
 
     public void checkWeight(){
-        int weight_g = 0;
+        int weight_g;
         try{
             if (this.weight.contains("kg")){
                 weight_g = 1000 * Integer.parseInt(this.weight.replace("kg",""));
