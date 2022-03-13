@@ -32,5 +32,4 @@ public class Grades {
         }
         return Double.valueOf(sum)/Double.valueOf(this.size);
     }
-
 }

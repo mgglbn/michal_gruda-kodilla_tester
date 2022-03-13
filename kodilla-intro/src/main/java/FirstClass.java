@@ -46,9 +46,5 @@ public class FirstClass {
         grades.add(11);
         System.out.println(grades.get_lastGrade());
         System.out.println(grades.get_average());
-
-
-
-        System.out.println();
     }
 }

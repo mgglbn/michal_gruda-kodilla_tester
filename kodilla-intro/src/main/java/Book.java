@@ -12,9 +12,5 @@ public class Book {
     public static void main(String[] args) {
         Book book = Book.of("Adam M.", "Pan Tadzio");
         System.out.println(book.getClass() + " Author: "+book.author+" Title: "+book.author);
-
     }
-
-
-
 }

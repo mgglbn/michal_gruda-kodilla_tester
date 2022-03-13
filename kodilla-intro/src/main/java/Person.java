@@ -17,6 +17,5 @@ public class Person {
                 System.out.println("User is 30 (or younger) or 160cm (or shorter)");
             }
         }
-
     }
 }

@@ -5,7 +5,6 @@ public class LeapYear {
         System.out.println(isLeapYear(1600));
         System.out.println(isLeapYear(2000));
         System.out.println(isLeapYear(2001));
-
     }
 
     private static boolean isLeapYear(int year){

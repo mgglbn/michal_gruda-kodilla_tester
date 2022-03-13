@@ -13,8 +13,5 @@ public class MainExtended {
         System.out.println(varFloat);
         System.out.println(varInt);
         System.out.println(varStr);
-
-
-
     }
 }
