@@ -1,34 +1,35 @@
 import java.util.Scanner;
+
 public class SwitchExercise {
-    public static String getColor(){
+    public static String getColor() {
         Scanner scanner = new Scanner(System.in);
-        while(true){
+        while (true) {
             System.out.println("Enter first letter of any color:");
             char ch = scanner.next().trim().charAt(0);
-            String color="";
-            switch(ch){
+            String color = "";
+            switch (ch) {
                 case 'a':
-                    color="amber";
+                    color = "amber";
                     break;
                 case 'b':
-                    color="blue";
+                    color = "blue";
                     break;
                 case 'c':
-                    color="cyan";
+                    color = "cyan";
                     break;
                 case 'f':
-                    color="fuchsia";
+                    color = "fuchsia";
                     break;
                 case 'g':
-                    color="green";
+                    color = "green";
                     break;
                 case 'i':
-                    color="indigo";
+                    color = "indigo";
                 case 'o':
-                    color="orange";
+                    color = "orange";
                     break;
                 case 'w':
-                    color="white";
+                    color = "white";
                     break;
 
                 default:
@@ -41,5 +42,4 @@ public class SwitchExercise {
     public static void main(String[] args) {
         System.out.println(SwitchExercise.getColor());
     }
-
 }

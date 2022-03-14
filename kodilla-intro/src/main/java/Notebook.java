@@ -34,12 +34,12 @@ public class Notebook {
     }
 
     public void checkWeight(){
-        int weight_g;
+        int weightG;
         try{
             if (this.weight.contains("kg")){
-                weight_g = 1000 * Integer.parseInt(this.weight.replace("kg",""));
+                weightG = 1000 * Integer.parseInt(this.weight.replace("kg",""));
             } else if (this.weight.contains("g")) {
-                weight_g = Integer.parseInt(this.weight.replace("g", ""));
+                weightG = Integer.parseInt(this.weight.replace("g", ""));
             } else{
                 System.out.println("Wrong value for weight - No units");
                 return;
@@ -51,9 +51,9 @@ public class Notebook {
             return;
         }
 
-        if (weight_g <= 600){
+        if (weightG <= 600){
             System.out.println("This notebook is very light.");
-        }else if (weight_g <= 1600){
+        }else if (weightG <= 1600){
             System.out.println("The notebook is not so heavy.");
         }else {
             System.out.println("Soo heavy.");
