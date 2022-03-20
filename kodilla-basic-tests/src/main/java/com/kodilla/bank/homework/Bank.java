@@ -36,17 +36,16 @@ public class Bank {
             return 0;
         }
         double sum = 0;
-        int withdrawals= 0;
+        int withdrawals = 0;
         for (CashMachine cashMachine : cashMachines) {
-            sum += cashMachine.getSumOFWithdrawals();
-            withdrawals+=cashMachine.getNumOfWithdrawals();
+            sum += cashMachine.getSumOfWithdrawals();
+            withdrawals += cashMachine.getNumOfWithdrawals();
         }
-        if (withdrawals==0){
+        if (withdrawals == 0) {
             return 0;
-        } else{
-            return sum/withdrawals;
+        } else {
+            return sum / withdrawals;
         }
-
     }
 
     public double getMeanDeposits() {
@@ -57,11 +56,11 @@ public class Bank {
         int deposits = 0;
         for (CashMachine cashMachine : cashMachines) {
             sum += cashMachine.getSumOfDeposits();
-            deposits+=cashMachine.getNumOfDeposits();
+            deposits += cashMachine.getNumOfDeposits();
         }
-        if(deposits==0){
+        if (deposits == 0) {
             return 0;
-        }else {
+        } else {
             return sum / deposits;
         }
     }

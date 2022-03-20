@@ -1,61 +1,62 @@
 package com.kodilla.bank.homework;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashMachineTestSuite {
 
     @Test
-    public void shouldBeBalnceZero(){
+    public void shouldBeBalanceZero() {
         CashMachine cashMachine = new CashMachine(0);
 
-        assertEquals(0,cashMachine.getBalance());
+        assertEquals(0, cashMachine.getBalance());
     }
 
     @Test
-    public void shouldBeBalnceZeroInitializedWithNegative(){
+    public void shouldBeBalanceZeroInitializedWithNegative() {
         CashMachine cashMachine = new CashMachine(-1000);
 
-        assertEquals(0,cashMachine.getBalance());
+        assertEquals(0, cashMachine.getBalance());
     }
 
     @Test
-    public void shouldBeBalanceMoreThanZero(){
+    public void shouldBeBalanceMoreThanZero() {
         CashMachine cashMachine = new CashMachine(1000);
 
-        assertEquals(1000,cashMachine.getBalance());
+        assertEquals(1000, cashMachine.getBalance());
     }
 
     @Test
-    public void shouldBeNumOfTransactionsZero(){
+    public void shouldBeNumOfTransactionsZero() {
         CashMachine cashMachine = new CashMachine(1000);
 
-        assertEquals(0,cashMachine.getNumOfTransactions());
+        assertEquals(0, cashMachine.getNumOfTransactions());
 
         cashMachine.withdrawal(0);
 
-        assertEquals(0,cashMachine.getNumOfTransactions());
+        assertEquals(0, cashMachine.getNumOfTransactions());
 
         cashMachine.deposit(0);
 
-        assertEquals(0,cashMachine.getNumOfTransactions());
+        assertEquals(0, cashMachine.getNumOfTransactions());
 
         cashMachine.withdrawal(1001);
 
-        assertEquals(0,cashMachine.getNumOfTransactions());
+        assertEquals(0, cashMachine.getNumOfTransactions());
     }
 
     @Test
-    public void shouldBeNumOfTransactionsTwo(){
+    public void shouldBeNumOfTransactionsTwo() {
         CashMachine cashMachine = new CashMachine(1000);
         cashMachine.withdrawal(100);
         cashMachine.deposit(200);
 
-        assertEquals(2,cashMachine.getNumOfTransactions());
+        assertEquals(2, cashMachine.getNumOfTransactions());
     }
 
     @Test
-    public void balanceAndNumOfTransactionsAfterSeriesOfWithdrawals(){
+    public void balanceAndNumOfTransactionsAfterSeriesOfWithdrawals() {
         CashMachine cashMachine = new CashMachine(1000);
         cashMachine.withdrawal(100);
         cashMachine.withdrawal(1150);
@@ -64,12 +65,12 @@ public class CashMachineTestSuite {
         cashMachine.withdrawal(0);
         cashMachine.withdrawal(-100);
 
-        assertEquals(800,cashMachine.getBalance());
-        assertEquals(2,cashMachine.getNumOfTransactions());
+        assertEquals(800, cashMachine.getBalance());
+        assertEquals(2, cashMachine.getNumOfTransactions());
     }
 
     @Test
-    public void balanceAndNumOfTransactionsAfterSeriesOfDeposits(){
+    public void balanceAndNumOfTransactionsAfterSeriesOfDeposits() {
         CashMachine cashMachine = new CashMachine(1000);
         cashMachine.deposit(0);
         cashMachine.deposit(-100);
@@ -79,12 +80,12 @@ public class CashMachineTestSuite {
         cashMachine.deposit(5000);
         cashMachine.deposit(90000);
 
-        assertEquals(100000,cashMachine.getBalance());
-        assertEquals(3,cashMachine.getNumOfTransactions());
+        assertEquals(100000, cashMachine.getBalance());
+        assertEquals(3, cashMachine.getNumOfTransactions());
     }
 
     @Test
-    public void shouldGetNumberOfWithdrawals(){
+    public void shouldGetNumberOfWithdrawals() {
         CashMachine cashMachine = new CashMachine(1000);
         cashMachine.withdrawal(0);
         cashMachine.withdrawal(-100);
@@ -94,11 +95,11 @@ public class CashMachineTestSuite {
         cashMachine.withdrawal(1000);
         cashMachine.withdrawal(1000);
 
-        assertEquals(3,cashMachine.getNumOfWithdrawals());
+        assertEquals(3, cashMachine.getNumOfWithdrawals());
     }
 
     @Test
-    public void shouldGetNumberOfDeposits(){
+    public void shouldGetNumberOfDeposits() {
         CashMachine cashMachine = new CashMachine(1000);
         cashMachine.deposit(99001);
         cashMachine.deposit(101);
@@ -107,40 +108,42 @@ public class CashMachineTestSuite {
         cashMachine.withdrawal(100);
         cashMachine.deposit(10);
         cashMachine.deposit(110);
-        assertEquals(2,cashMachine.getNumOfDeposits());
+
+        assertEquals(2, cashMachine.getNumOfDeposits());
     }
 
     @Test
-    public void shouldBeSumOfWithdrawalsZero(){
+    public void shouldBeSumOfWithdrawalsZero() {
         CashMachine cashMachine = new CashMachine(1000);
-        assertEquals(0,cashMachine.getSumOFWithdrawals());
+
+        assertEquals(0, cashMachine.getSumOfWithdrawals());
     }
 
     @Test
-    public void shouldBeSumOfWithdrawalsWhenMoreThanZero(){
+    public void shouldBeSumOfWithdrawalsWhenMoreThanZero() {
         CashMachine cashMachine = new CashMachine(1000);
         cashMachine.withdrawal(100);
         cashMachine.withdrawal(200);
         cashMachine.withdrawal(110);
         cashMachine.deposit(200);
 
-        assertEquals(410,cashMachine.getSumOFWithdrawals());
+        assertEquals(410, cashMachine.getSumOfWithdrawals());
     }
 
     @Test
-    public void shouldBeSumOfDepositsZero(){
+    public void shouldBeSumOfDepositsZero() {
         CashMachine cashMachine = new CashMachine(1000);
-        assertEquals(0,cashMachine.getSumOfDeposits());
+        assertEquals(0, cashMachine.getSumOfDeposits());
     }
 
     @Test
-    public void shouldBeSumOfDepositsWhenMoreThanZero(){
+    public void shouldBeSumOfDepositsWhenMoreThanZero() {
         CashMachine cashMachine = new CashMachine(1000);
         cashMachine.deposit(100);
         cashMachine.deposit(200);
         cashMachine.deposit(110);
         cashMachine.withdrawal(200);
 
-        assertEquals(410,cashMachine.getSumOfDeposits());
+        assertEquals(410, cashMachine.getSumOfDeposits());
     }
 }
