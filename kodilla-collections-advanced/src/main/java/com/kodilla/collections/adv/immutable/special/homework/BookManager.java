@@ -1,12 +1,12 @@
 package com.kodilla.collections.adv.immutable.special.homework;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class BookManager {
 
-    private static Set<Book> books = new HashSet<>();
-
+    private static List<Book> books = new ArrayList<>();
     public static Book createBook(String title, String author) {
         Book book = new Book(title, author);
 

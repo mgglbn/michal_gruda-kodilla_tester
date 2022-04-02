@@ -14,25 +14,6 @@ class FlightFinderTestSuite {
     @BeforeAll
     public static void testSetup() {
         finder = new FlightFinder();
-        FlightRepository.addFlight(new Flight("LUZ", "DUB"));
-        FlightRepository.addFlight(new Flight("LUZ", "TRF"));
-        FlightRepository.addFlight(new Flight("LUZ", "DSA"));
-        FlightRepository.addFlight(new Flight("LUZ", "LTN"));
-        FlightRepository.addFlight(new Flight("LUZ", "WAW"));
-        FlightRepository.addFlight(new Flight("LUZ", "GDN"));
-
-        FlightRepository.addFlight(new Flight("WAW", "LUZ"));
-        FlightRepository.addFlight(new Flight("WAW", "MUN"));
-        FlightRepository.addFlight(new Flight("WAW", "LTN"));
-
-        FlightRepository.addFlight(new Flight("LTN", "LUZ"));
-        FlightRepository.addFlight(new Flight("LTN", "WAW"));
-        FlightRepository.addFlight(new Flight("LTN", "MUN"));
-
-        FlightRepository.addFlight(new Flight("TRF", "LUZ"));
-        FlightRepository.addFlight(new Flight("TRF", "LTN"));
-        FlightRepository.addFlight(new Flight("TRF", "WAW"));
-        FlightRepository.addFlight(new Flight("TRF", "MUN"));
     }
 
     @Test
