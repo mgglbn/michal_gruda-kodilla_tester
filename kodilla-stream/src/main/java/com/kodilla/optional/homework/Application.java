@@ -15,9 +15,8 @@ public class Application {
                 new Student("Student 8", null),
         };
 
-        for (Student student :
-                students) {
-            System.out.println("uczeń: " + student.getName()+", nauczyciel: " +
+        for (Student student : students) {
+            System.out.println("uczeń: " + student.getName() + ", nauczyciel: " +
                     Optional.ofNullable(student.getTeacher()).orElse(new Teacher("<undefined>")).getName());
         }
     }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository {
-    public static List<User> getUserList(){
-        List<User> users=new ArrayList<>();
+    public static List<User> getUserList() {
+        List<User> users = new ArrayList<>();
         users.add(new User("Walter White", 50, 7, "Chemists"));
         users.add(new User("Jessie Pinkman", 25, 4648, "Sales"));
         users.add(new User("Tuco Salamanca", 34, 116, "Manager"));
