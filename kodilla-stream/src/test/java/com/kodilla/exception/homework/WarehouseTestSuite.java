@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WarehouseTestSuite {
     @Test
-    public void testGetOrderWithException(){
+    public void testGetOrderWithException() {
         Warehouse warehouse = new Warehouse();
         warehouse.addOrder(new Order("1"));
         warehouse.addOrder(new Order("2"));
 
-        assertThrows(OrderDoesNotExistException.class,()->warehouse.getOrder("3"));
+        assertThrows(OrderDoesNotExistException.class, () -> warehouse.getOrder("3"));
     }
 }
