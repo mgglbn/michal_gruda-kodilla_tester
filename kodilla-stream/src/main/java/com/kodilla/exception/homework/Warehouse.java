@@ -1,7 +1,6 @@
 package com.kodilla.exception.homework;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 public class Warehouse {
@@ -24,7 +23,6 @@ public class Warehouse {
                 .orElseThrow(OrderDoesNotExistException::new);
 
         //.orElseThrow(()-> new OrderDoesNotExistException());
-
 
 //        if (order.isEmpty()) {
 //            throw new OrderDoesNotExistException();
