@@ -33,9 +33,8 @@ class GamblingMachineTestSuite {
             int winsCount = gamblingMachine.howManyWins(getUserNumbers(howManyNums, minNum, maxNum));
             assertTrue(winsCount >= 0 && winsCount < 7);
         } catch (InvalidNumbersException e) {
-
+            System.out.println("Wrong user numbers set");
         }
-
     }
 
     private Set<Integer> getUserNumbers(int howManyNums, int minNum, int maxNum) {
