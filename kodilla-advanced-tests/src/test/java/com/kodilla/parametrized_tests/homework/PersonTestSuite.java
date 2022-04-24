@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTestSuite {
     @ParameterizedTest
-    @MethodSource(value="com.kodilla.parametrized_tests.homework.PersonSources#providePersonForTestingBMI")
-    public void shouldGiveCorrectBMIDescription(Person person, String desciption){
-        assertEquals(person.getBMI(),desciption);
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.PersonSources#providePersonForTestingBMI")
+    public void shouldGiveCorrectBMIDescription(Person person, String description) {
+        assertEquals(person.getBMI(), description);
     }
 }
