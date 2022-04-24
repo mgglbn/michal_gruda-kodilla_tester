@@ -49,9 +49,7 @@ public class NotificationServiceTestSuite {
     public void unsubscribedClientShouldNotReceiveNotification() {
 
         notificationService.addSubscriber(client);
-
         notificationService.removeSubscriber(client);
-
         notificationService.sendNotification(notification);
         Mockito.verify(client, Mockito.never()).receive(notification);
     }

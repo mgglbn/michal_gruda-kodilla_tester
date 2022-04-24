@@ -1,7 +1,6 @@
 package com.kodilla.execution_model.homework;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 public class Order {
@@ -9,7 +8,7 @@ public class Order {
     private LocalDate date;
     private String username;
 
-    public Order(String username,double value, LocalDate date) {
+    public Order(String username, double value, LocalDate date) {
         this.value = value;
         this.date = date;
         this.username = username;

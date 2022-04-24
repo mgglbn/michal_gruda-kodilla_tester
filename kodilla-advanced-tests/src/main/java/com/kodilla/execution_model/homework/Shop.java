@@ -19,15 +19,15 @@ public class Shop {
                         (u.getDate().isBefore(to) || u.getDate().isEqual(to)))
                 .collect(Collectors.toSet());
 
-        return filteredOrders ;
+        return filteredOrders;
     }
 
     public Set<Order> getOrdersInRangeOfValues(double valueMin, double valueMax) {
         Set<Order> filteredOrders = orders.stream()
-                .filter(u -> u.getValue()>= valueMin && u.getValue()<=valueMax)
+                .filter(u -> u.getValue() >= valueMin && u.getValue() <= valueMax)
                 .collect(Collectors.toSet());
 
-        return filteredOrders ;
+        return filteredOrders;
     }
 
     public int getSize() {
@@ -44,7 +44,7 @@ public class Shop {
 
     private boolean validateOrder(Order order) {
         if (order != null)
-            if(order.getUsername() != null && order.getDate() != null){
+            if (order.getUsername() != null && order.getDate() != null) {
                 return !order.getUsername().isEmpty() &&
                         order.getValue() > 0.0 &&
                         order.getDate().isBefore(LocalDate.now());

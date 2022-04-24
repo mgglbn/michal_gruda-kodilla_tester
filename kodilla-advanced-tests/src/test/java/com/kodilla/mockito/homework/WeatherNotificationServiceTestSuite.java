@@ -28,7 +28,6 @@ class WeatherNotificationServiceTestSuite {
         Mockito.verify(fourthClient, Mockito.never()).receive(notification);
     }
 
-
     @Test
     public void notificationToAllShouldBeSentToAllSubscribedClients() {
 
@@ -37,7 +36,6 @@ class WeatherNotificationServiceTestSuite {
         Mockito.verify(secondClient, Mockito.times(1)).receive(notification);
         Mockito.verify(thirdClient, Mockito.times(1)).receive(notification);
     }
-
 
     @Test
     public void notSubscribedClientShouldNotReceiveNotificationForOtherRegion() {
@@ -60,47 +58,46 @@ class WeatherNotificationServiceTestSuite {
 
     @Test
     public void shouldSendOnlyOneNotificationToAllToMultiTimeSubscriber() {
-        weatherNotificationService.addSubscriber("A",firstClient);
-        weatherNotificationService.addSubscriber("A",firstClient);
-        weatherNotificationService.addSubscriber("A",firstClient);
-        weatherNotificationService.addSubscriber("C",firstClient);
-        weatherNotificationService.addSubscriber("C",firstClient);
+        weatherNotificationService.addSubscriber("A", firstClient);
+        weatherNotificationService.addSubscriber("A", firstClient);
+        weatherNotificationService.addSubscriber("A", firstClient);
+        weatherNotificationService.addSubscriber("C", firstClient);
+        weatherNotificationService.addSubscriber("C", firstClient);
         weatherNotificationService.sendNotificationToAll(notification);
-        Mockito.verify(firstClient,Mockito.times(1)).receive(notification);
+        Mockito.verify(firstClient, Mockito.times(1)).receive(notification);
     }
 
     @Test
     public void shouldSendOnlyOneNotificationToRegionToMultiTimeSubscriber() {
-        weatherNotificationService.addSubscriber("A",firstClient);
-        weatherNotificationService.addSubscriber("A",firstClient);
-        weatherNotificationService.addSubscriber("A",firstClient);
-        weatherNotificationService.addSubscriber("C",firstClient);
-        weatherNotificationService.addSubscriber("C",firstClient);
-        weatherNotificationService.sendNotificationToRegion("A",notification);
-        Mockito.verify(firstClient,Mockito.times(1)).receive(notification);
+        weatherNotificationService.addSubscriber("A", firstClient);
+        weatherNotificationService.addSubscriber("A", firstClient);
+        weatherNotificationService.addSubscriber("A", firstClient);
+        weatherNotificationService.addSubscriber("C", firstClient);
+        weatherNotificationService.addSubscriber("C", firstClient);
+        weatherNotificationService.sendNotificationToRegion("A", notification);
+        Mockito.verify(firstClient, Mockito.times(1)).receive(notification);
     }
 
     @Test
     public void unsubscribedClientFromRegionShouldNotReceiveNotification() {
-        weatherNotificationService.removeSubscriberFromRegion("A",firstClient);
-        weatherNotificationService.sendNotificationToRegion("A",notification);
-        Mockito.verify(firstClient,Mockito.never()).receive(notification);
+        weatherNotificationService.removeSubscriberFromRegion("A", firstClient);
+        weatherNotificationService.sendNotificationToRegion("A", notification);
+        Mockito.verify(firstClient, Mockito.never()).receive(notification);
     }
 
     @Test
     public void unsubscribedClientFromAllShouldNotReceiveAnyNotification() {
         weatherNotificationService.removeSubscriberFromAll(firstClient);
-        weatherNotificationService.sendNotificationToRegion("A",notification);
+        weatherNotificationService.sendNotificationToRegion("A", notification);
         weatherNotificationService.sendNotificationToAll(notification);
-        Mockito.verify(firstClient,Mockito.never()).receive(notification);
+        Mockito.verify(firstClient, Mockito.never()).receive(notification);
     }
 
     @Test
-    public void deletedRegionShouldNotReceiveAnyNotificationsForClients(){
+    public void deletedRegionShouldNotReceiveAnyNotificationsForClients() {
         weatherNotificationService.deleteRegion("A");
-        weatherNotificationService.sendNotificationToRegion("A",notification);
-        Mockito.verify(firstClient,Mockito.never()).receive(notification);
-        Mockito.verify(secondClient,Mockito.never()).receive(notification);
+        weatherNotificationService.sendNotificationToRegion("A", notification);
+        Mockito.verify(firstClient, Mockito.never()).receive(notification);
+        Mockito.verify(secondClient, Mockito.never()).receive(notification);
     }
-
 }
