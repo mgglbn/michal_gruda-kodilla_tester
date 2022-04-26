@@ -14,20 +14,16 @@ public class Shop {
     }
 
     public Set<Order> getOrdersBetweenDates(LocalDate from, LocalDate to) {
-        Set<Order> filteredOrders = orders.stream()
+        return orders.stream()
                 .filter(u -> (u.getDate().isAfter(from) || u.getDate().isEqual(from)) &&
                         (u.getDate().isBefore(to) || u.getDate().isEqual(to)))
                 .collect(Collectors.toSet());
-
-        return filteredOrders;
     }
 
     public Set<Order> getOrdersInRangeOfValues(double valueMin, double valueMax) {
-        Set<Order> filteredOrders = orders.stream()
+        return orders.stream()
                 .filter(u -> u.getValue() >= valueMin && u.getValue() <= valueMax)
                 .collect(Collectors.toSet());
-
-        return filteredOrders;
     }
 
     public int getSize() {
@@ -35,11 +31,9 @@ public class Shop {
     }
 
     public double getValueOfAll() {
-        double sum = orders
-                .stream()
+        return orders.stream()
                 .mapToDouble(n -> n.getValue())
                 .sum();
-        return sum;
     }
 
     private boolean validateOrder(Order order) {

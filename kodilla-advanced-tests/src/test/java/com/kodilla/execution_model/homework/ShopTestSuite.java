@@ -10,12 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShopTestSuite {
     Shop shop = new Shop();
     Order[] orders = new Order[]{
-            new Order("A", 10, LocalDate.of(2022, 4, 2)),
-            new Order("B", 20, LocalDate.of(2022, 4, 3)),
-            new Order("C", 30, LocalDate.of(2022, 4, 4)),
-            new Order("A", 40, LocalDate.of(2022, 4, 5)),
-            new Order("B", 50, LocalDate.of(2022, 4, 6)),
-            new Order("C", 60, LocalDate.of(2022, 4, 7))
+            new Order("A", 10, LocalDate.now().minusDays(5)),
+            new Order("B", 20, LocalDate.now().minusDays(3)),
+            new Order("C", 30, LocalDate.now().minusDays(15)),
+            new Order("A", 40, LocalDate.now().minusDays(54)),
+            new Order("B", 50, LocalDate.now().minusDays(12)),
+            new Order("C", 60, LocalDate.now().minusDays(5))
     };
 
     @BeforeEach

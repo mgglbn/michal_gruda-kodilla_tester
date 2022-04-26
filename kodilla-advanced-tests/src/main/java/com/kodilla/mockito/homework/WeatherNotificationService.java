@@ -22,7 +22,7 @@ public class WeatherNotificationService {
     }
 
     public void removeSubscriberFromAll(Client client) {
-        regionsSetMap.keySet().forEach(key -> regionsSetMap.get(key).remove(client)); //Wiem że można to uprościć ale nie umiem;)
+        regionsSetMap.keySet().forEach(key -> regionsSetMap.get(key).remove(client));
     }
 
     public void sendNotificationToRegion(String region, Notification notification) {
@@ -34,7 +34,7 @@ public class WeatherNotificationService {
     public void sendNotificationToAll(Notification notification) {
         Set<Client> clients = new HashSet<>();
         regionsSetMap.keySet().forEach(key -> regionsSetMap.get(key).forEach(client -> clients.add(client)));
-        clients.forEach(client -> client.receive(notification));  //czy da się w jednym streamie????
+        clients.forEach(client -> client.receive(notification));
     }
 
     public void deleteRegion(String region) {

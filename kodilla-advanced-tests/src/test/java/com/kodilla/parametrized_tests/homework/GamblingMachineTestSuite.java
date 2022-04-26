@@ -14,14 +14,12 @@ class GamblingMachineTestSuite {
     @ParameterizedTest
     @CsvFileSource(resources = "/gamblingMachineDataThrowException.csv", numLinesToSkip = 1)
     public void shouldThrowInvalidNumberException(int howManyNums, int minNum, int maxNum) {
-
         assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(getUserNumbers(howManyNums, minNum, maxNum)));
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/gamblingMachineDataDoesNotThrowException.csv", numLinesToSkip = 1)
     public void shouldNotThrowInvalidNumberException(int howManyNums, int minNum, int maxNum) {
-
         assertDoesNotThrow(() -> gamblingMachine.howManyWins(getUserNumbers(howManyNums, minNum, maxNum)));
     }
 
