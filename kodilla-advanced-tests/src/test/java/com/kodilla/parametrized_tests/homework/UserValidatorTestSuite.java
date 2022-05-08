@@ -3,7 +3,8 @@ package com.kodilla.parametrized_tests.homework;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class UserValidatorTestSuite {
     private UserValidator validator = new UserValidator();
@@ -27,7 +28,7 @@ class UserValidatorTestSuite {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"", " ", "@", ".@asd.asf", "abc@bca.abcdefg", "1.dfv.dvd", "abc@bca.1", "abc d@gfs.com",
+    @ValueSource(strings = {" ", "@", ".@asd.asf", "abc@bca.abcdefg", "1.dfv.dvd", "abc@bca.1", "abc d@gfs.com",
             "qwr@_gd.com", "123@sdf.com1"})
     public void emailShouldBeInvalid(String email) {
         assertFalse(validator.validateEmail(email));

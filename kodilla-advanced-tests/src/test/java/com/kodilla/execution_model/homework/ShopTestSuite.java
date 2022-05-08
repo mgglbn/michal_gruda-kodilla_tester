@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ShopTestSuite {
     Shop shop = new Shop();
@@ -32,8 +32,8 @@ class ShopTestSuite {
 
     @Test
     public void shouldGetOrdersBetweenDates() {
-        int numOfOrders = shop.getOrdersBetweenDates(LocalDate.of(2022, 4, 3), LocalDate.of(2022, 4, 6)).size();
-        assertEquals(4, numOfOrders);
+        int numOfOrders = shop.getOrdersBetweenDates(LocalDate.now().minusDays(11), LocalDate.now().minusDays(4)).size();
+        assertEquals(2, numOfOrders);
     }
 
     @Test
